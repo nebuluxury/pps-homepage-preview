@@ -171,6 +171,54 @@ footer a:hover{color:#fff}
 .news{display:flex;gap:.6rem;max-width:480px;margin:1.4rem auto 0}
 .news input{flex:1;padding:.85rem 1.1rem;border-radius:999px;border:1px solid var(--line);font-family:inherit;font-size:1rem}
 @media(max-width:520px){.news{flex-direction:column}}
+
+/* placeholder note pill */
+.ph-note{display:inline-block;font-family:'Oswald',sans-serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#b06a00;background:#fff3df;border:1px solid #ffe2b0;padding:.2rem .5rem;border-radius:6px;vertical-align:middle}
+
+/* STRING BUILDER mock */
+.builder{background:linear-gradient(135deg,#0e3f63,#16201a);border-radius:24px;color:#fff;padding:38px;box-shadow:var(--shadow-lg)}
+.builder-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+@media(max-width:860px){.builder-grid{grid-template-columns:1fr}}
+.builder h2{color:#fff;text-transform:uppercase;font-size:clamp(1.8rem,3.5vw,2.6rem)}
+.builder .fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1.2rem 0}
+.builder select,.builder .fake{width:100%;padding:.8rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font-family:inherit;font-size:.95rem}
+.builder label{font-family:'Oswald',sans-serif;letter-spacing:.08em;text-transform:uppercase;font-size:.72rem;opacity:.8;display:block;margin-bottom:.3rem}
+.builder .colors{display:flex;gap:8px;flex-wrap:wrap;margin:.4rem 0 1.2rem}
+.dotc{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.5);cursor:pointer}
+.builder .preview-box{background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.3);border-radius:16px;aspect-ratio:4/3;display:grid;place-items:center;text-align:center;padding:20px}
+
+/* placeholder image tile (designed, not broken) */
+.tile{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:#fff;transition:.2s;display:flex;flex-direction:column}
+.tile:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.tile .top{aspect-ratio:1/1;display:grid;place-items:center;position:relative;background:var(--bg-soft)}
+.tile .top .ico{font-size:3rem;opacity:.85}
+.tile .top .stamp{position:absolute;bottom:8px;right:8px;font-family:'Oswald',sans-serif;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#7d8a7e;background:#fff;border:1px solid var(--line);padding:.18rem .45rem;border-radius:6px}
+.tile .b{padding:16px 16px 18px;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.tile h3{font-size:1.06rem}
+.tile p{color:var(--muted);font-size:.86rem;margin:0}
+.tile .price{font-family:'Oswald',sans-serif;color:var(--blue);font-size:1.1rem;margin-top:auto}
+
+/* WARRANTY band */
+.warr{background:#16201a;color:#e7ece6;border-radius:24px;padding:46px;display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center}
+@media(max-width:760px){.warr{grid-template-columns:1fr;text-align:center}}
+.warr .seal{width:120px;height:120px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-family:'Oswald',sans-serif;line-height:1;text-align:center;color:#fff;margin:0 auto}
+.warr .seal b{font-size:2.2rem;display:block}
+.warr .seal small{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase}
+.warr h2{color:#fff;text-transform:uppercase}
+.warr ul{list-style:none;padding:0;margin:.8rem 0 0;display:flex;gap:1.4rem;flex-wrap:wrap}
+.warr li{display:flex;gap:.5rem;align-items:center}
+.warr li::before{content:"✓";color:#7fd18a;font-weight:700}
+
+/* NEXT / expansion grid */
+.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:880px){.next-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.next-grid{grid-template-columns:1fr}}
+.next{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:#fff;position:relative;transition:.2s}
+.next:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.next .ico{font-size:2rem}
+.next h3{font-size:1.15rem;text-transform:uppercase;margin:.6rem 0 .4rem}
+.next p{color:var(--muted);font-size:.9rem;margin:0}
+.next .soon{position:absolute;top:16px;right:16px;font-family:'Oswald',sans-serif;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);background:#eef1e8;padding:.2rem .5rem;border-radius:6px}
 </style>
 </head>
 <body>
@@ -185,10 +233,11 @@ footer a:hover{color:#fff}
     </a>
     <nav class="main">
       <a href="#shop">Shop</a>
-      <a href="#craft">Craftsmanship</a>
-      <a href="#how">How It Works</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#builder">Build a String</a>
+      <a href="#about">The Builder</a>
+      <a href="#accessories">Accessories</a>
+      <a href="#next">What's Next</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="hdr-cta">
@@ -307,6 +356,44 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
+<!-- STRING BUILDER -->
+<section class="pad" id="builder">
+  <div class="wrap">
+    <div class="builder">
+      <div class="builder-grid">
+        <div>
+          <p class="eyebrow" style="color:#cfe2f2">Build Your String <span class="ph-note">Demo — not yet functional</span></p>
+          <h2>Pick Your Bow. Pick Your Colors. We Build It.</h2>
+          <p style="opacity:.9;max-width:46ch">Tell us your exact bow and we match the spec from our database — then you choose the colors. This is the planned interactive builder (like the big shops use). For now, just send us your bow and we'll handle it personally.</p>
+          <div class="fields">
+            <div><label>Bow Brand</label><select><option>Mathews</option><option>Hoyt</option><option>Bowtech</option><option>PSE</option><option>Elite</option><option>Prime</option><option>Diamond / Bear</option><option>Other — tell us</option></select></div>
+            <div><label>Model</label><select><option>Select brand first…</option></select></div>
+            <div><label>Year</label><select><option>2025</option><option>2024</option><option>2023</option><option>Older — tell us</option></select></div>
+            <div><label>Set</label><select><option>Complete Set</option><option>String only</option><option>Single cable</option><option>2 / 3 / 5 / 7-piece</option></select></div>
+          </div>
+          <label>Colors (1 or 2 + serving)</label>
+          <div class="colors">
+            <span class="dotc" style="background:#16201a"></span>
+            <span class="dotc" style="background:#5a6b3b"></span>
+            <span class="dotc" style="background:#1f6fb2"></span>
+            <span class="dotc" style="background:#b23a2f"></span>
+            <span class="dotc" style="background:#f2a900"></span>
+            <span class="dotc" style="background:#ffffff"></span>
+            <span class="dotc camo"></span>
+          </div>
+          <a class="btn btn-primary" href="#contact">Send My Build to Zachary</a>
+        </div>
+        <div class="preview-box">
+          <div>
+            <div style="font-size:2.6rem">🎯🧵</div>
+            <p style="opacity:.85;margin:.6rem 0 0">Live string preview will render here<br><span class="ph-note">Placeholder</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="camo" style="height:10px"></div>
 
 <!-- CRAFT -->
@@ -331,17 +418,20 @@ footer a:hover{color:#fff}
 <section class="pad" id="about">
   <div class="wrap split">
     <div>
-      <p class="eyebrow">Meet the Builder</p>
-      <h2>One person. Every string.</h2>
-      <p style="color:var(--muted)"><em>[Placeholder copy — swap in the real story.]</em> Palmetto Precision Strings started in the backyard and grew on word of mouth. Every order is built, served, and inspected by one set of hands — no production line, no shortcuts. When you order, you're talking to the person actually building your strings.</p>
-      <p style="color:var(--muted)">Based in the Carolinas. Building for hunters, target shooters, and everyone in between.</p>
-      <div style="display:flex;gap:2rem;margin-top:1.4rem">
+      <p class="eyebrow">Meet Zachary — The Builder</p>
+      <h2>Built by a real Carolina bowhunter</h2>
+      <p style="color:var(--muted)"><span class="ph-note">Placeholder bio — swap in Zachary's real words & photos</span></p>
+      <p style="color:var(--muted)">Zachary has had a bow in his hands since he was a kid. What started as a lifelong obsession with hunting turned into building the kind of strings he always wanted to shoot himself — dialed-in, dependable, and made to handle real days in the woods, not just the range.</p>
+      <p style="color:var(--muted)">Every set today is still built, served, and inspected by Zachary personally. As Palmetto Precision grows, he'll stay the face of it — training the hands that build for you and putting his name on every string that goes out the door.</p>
+      <div style="display:flex;gap:2rem;margin-top:1.4rem;flex-wrap:wrap">
+        <div><b style="font-family:'Oswald';font-size:1.9rem;color:var(--blue);display:block">20+ yrs</b><small style="color:var(--muted)">Behind a bow <span class="ph-note">verify</span></small></div>
         <div><b style="font-family:'Oswald';font-size:1.9rem;color:var(--blue);display:block">100%</b><small style="color:var(--muted)">Hand built</small></div>
         <div><b style="font-family:'Oswald';font-size:1.9rem;color:var(--blue);display:block">24hr</b><small style="color:var(--muted)">Response time</small></div>
         <div><b style="font-family:'Oswald';font-size:1.9rem;color:var(--blue);display:block">5.0★</b><small style="color:var(--muted)">Archer rated</small></div>
       </div>
+      <a class="btn btn-dark" href="#contact" style="margin-top:1.4rem">Talk to Zachary</a>
     </div>
-    <img src="https://cdn.shopify.com/s/files/1/0670/4899/6998/files/IMG_9412.jpg?v=1782674675&width=900" alt="Custom bow string build">
+    <img src="https://cdn.shopify.com/s/files/1/0670/4899/6998/files/IMG_9412.jpg?v=1782674675&width=900" alt="Zachary building a custom bow string">
   </div>
 </section>
 
@@ -363,6 +453,67 @@ footer a:hover{color:#fff}
       <span class="swatch" style="--c:#f2a900">Hi-Vis</span>
       <span class="swatch" style="--c:#ffffff;color:#16201a;border:1px solid var(--line)">White</span>
       <span class="swatch camo" style="color:#fff">Camo</span>
+    </div>
+  </div>
+</section>
+
+<!-- WARRANTY -->
+<section class="pad" id="warranty">
+  <div class="wrap">
+    <div class="warr">
+      <div class="seal"><div><b>2-YR</b><small>Guarantee</small></div></div>
+      <div>
+        <p class="eyebrow" style="color:#cfe2f2">The Palmetto Promise <span class="ph-note">Confirm warranty length with Zachary</span></p>
+        <h2>No peep rotation. No serving separation. No creep.</h2>
+        <p style="opacity:.9;max-width:60ch">Every string is pre-stretched and built to settle in fast and hold true. If it doesn't perform, we make it right. <em>(Recommended positioning: a 2-year guarantee beats most competitors; a lifetime-service guarantee matches the very top shops.)</em></p>
+        <ul>
+          <li>Premium fibers <span class="ph-note" style="margin-left:.3rem">BCY 452X / X99 / Mercury — confirm</span></li>
+          <li>Pre-stretched &amp; served</li>
+          <li>Built &amp; inspected by hand</li>
+          <li>Made in the USA</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESSORIES -->
+<section class="pad" id="accessories" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Add-Ons</p>
+      <h2>Accessories &amp; Consumables</h2>
+      <p>The small stuff archers reorder all the time — easy to add to any string order. <span class="ph-note">Sample lineup &amp; pricing — confirm what Zachary wants to stock</span></p>
+    </div>
+    <div class="grid">
+      <div class="tile"><div class="top"><span class="ico">🎯</span><span class="stamp">Sample photo</span></div><div class="b"><h3>Peep Sights</h3><p>Aluminum peeps in multiple sizes.</p><span class="price">from $9</span></div></div>
+      <div class="tile"><div class="top"><span class="ico">➰</span><span class="stamp">Sample photo</span></div><div class="b"><h3>D-Loops</h3><p>BCY D-loop, pre-cut or by the foot.</p><span class="price">from $5</span></div></div>
+      <div class="tile"><div class="top"><span class="ico">🧴</span><span class="stamp">Sample photo</span></div><div class="b"><h3>String Wax</h3><p>Keep your strings protected &amp; quiet.</p><span class="price">from $8</span></div></div>
+      <div class="tile"><div class="top"><span class="ico">🔇</span><span class="stamp">Sample photo</span></div><div class="b"><h3>String Stops &amp; Silencers</h3><p>Kill noise and vibration on the shot.</p><span class="price">from $6</span></div></div>
+      <div class="tile"><div class="top"><span class="ico">⚙️</span><span class="stamp">Sample photo</span></div><div class="b"><h3>Speed Nocks</h3><p>Tune your string for max FPS.</p><span class="price">from $7</span></div></div>
+      <div class="tile"><div class="top"><span class="ico">🎁</span><span class="stamp">Sample photo</span></div><div class="b"><h3>Gift Cards</h3><p>Let them pick their own colors.</p><span class="price">$25–$300</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S NEXT / EXPANSION -->
+<section class="pad" id="next">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Where We're Headed</p>
+      <h2>More Than Strings</h2>
+      <p>Built on the same hands-on quality — here's what Palmetto Precision is growing into. <span class="ph-note">Roadmap / concepts — turn on what you want to offer</span></p>
+    </div>
+    <div class="next-grid">
+      <div class="next"><span class="soon">Coming soon</span><div class="ico">🏹</div><h3>Crossbow Strings &amp; Cables</h3><p>Custom-built crossbow sets — a natural fit and a yearly-replacement repeat customer.</p></div>
+      <div class="next"><span class="soon">Concept</span><div class="ico">🧳</div><h3>Travel &amp; Hard Cases</h3><p>Airline-rated bow and crossbow cases — quality imports, rebranded Palmetto Precision. A real gap between cheap plastic and $500 cases.</p></div>
+      <div class="next"><span class="soon">Planned</span><div class="ico">🌎</div><h3>International Shipping</h3><p>Ship custom strings &amp; crossbow sets worldwide where legal — lightweight, high-value, easy to send.</p></div>
+      <div class="next"><span class="soon">Planned</span><div class="ico">🔁</div><h3>Restring Reminders</h3><p>Strings wear yearly. Opt in and we'll remind you when it's time — almost nobody in the industry does this.</p></div>
+      <div class="next"><span class="soon">Apply soon</span><div class="ico">⭐</div><h3>Pro Staff / Ambassadors</h3><p>Shoot Palmetto, share your hunts, earn perks. Building a team of real archers repping the brand.</p></div>
+      <div class="next"><span class="soon">For shops</span><div class="ico">🏪</div><h3>Dealer &amp; Wholesale</h3><p>Pro shops: stock our strings or send us your custom orders. The path to building beyond one bench.</p></div>
+      <div class="next"><span class="soon">Free add-on</span><div class="ico">📸</div><h3>Build-Photo Updates</h3><p>Get a photo of your actual string mid-build. You know exactly who made it.</p></div>
+      <div class="next"><span class="soon">Optional</span><div class="ico">⚡</div><h3>Rush Turnaround</h3><p>Need it fast for a hunt or shoot? Priority build &amp; ship when you're on the clock.</p></div>
+      <div class="next"><span class="soon">Idea</span><div class="ico">🎥</div><h3>How-To &amp; Tuning Content</h3><p>Videos on string care, tuning, and setup — building Palmetto as the name archers trust.</p></div>
     </div>
   </div>
 </section>
@@ -431,14 +582,46 @@ footer a:hover{color:#fff}
     <div class="sec-head">
       <p class="eyebrow">Questions</p>
       <h2>Frequently Asked</h2>
-      <p><em>[Placeholder answers — confirm and adjust to your actual process.]</em></p>
+      <p>Real answers about custom strings — no hype. If your question isn't here, just ask. <span class="ph-note">Review answers with Zachary &amp; tweak specifics</span></p>
     </div>
     <div class="faq">
-      <details open><summary>How do I order custom strings?</summary><p>Send your bow make, model, and any color preferences through the contact form. We'll confirm the specs and build your set to match.</p></details>
-      <details><summary>What's your turnaround time?</summary><p>We respond within 24 hours and build each set by hand. Typical build and ship time will be listed here once confirmed.</p></details>
-      <details><summary>Will my strings have peep rotation or creep?</summary><p>No. Every set is pre-stretched and served so it settles in fast with no peep twist — that's the whole point of a hand built string.</p></details>
-      <details><summary>What if I don't know my exact specs?</summary><p>No problem. Tell us your bow model and we'll figure out the right lengths together. Direct communication is part of the service.</p></details>
-      <details><summary>Do you offer single string or cable replacements?</summary><p>Yes — single strings and single cables are available individually in the shop above.</p></details>
+
+      <h3 style="font-family:'Oswald';text-transform:uppercase;letter-spacing:.06em;color:var(--green);font-size:1rem;margin:8px 0 14px">Custom vs. Factory Strings</h3>
+      <details open><summary>What's the real difference between custom and factory strings?</summary><p>Honestly, a good factory string and a good custom string are made from similar materials. The difference is in the build: a custom string is made for <em>your</em> bow, pre-stretched and served the way you want, and built one at a time instead of mass-produced. The biggest practical wins are consistency (less creep and peep rotation once it's settled), the exact colors you want, and being able to talk to the person who built it. We won't tell you a factory string is junk — we'll tell you a custom string is dialed in.</p></details>
+      <details><summary>My bow shoots fine. Why would I replace the string?</summary><p>Two main reasons: wear and personalization. Strings are a wear item — the serving frays, the string fuzzes, and performance drifts over time. If yours is a few years old, worn, or has been weathered, fresh strings restore consistency. The second reason is simple: you want your colors and a string built specifically for you.</p></details>
+      <details><summary>Will custom strings make my bow faster?</summary><p>We'll be straight with you: a string alone won't magically add a bunch of FPS. What a quality, properly pre-stretched string does is keep your speed and tune <em>consistent</em> shot to shot, and speed nocks can be tuned in to squeeze out a little more. The real gains are in consistency and reliability, not headline speed numbers.</p></details>
+      <details><summary>Are custom strings worth the money?</summary><p>If you want exact colors, a string built for your specific bow, less hand-tuning of peep twist, and a real person standing behind it — yes. If you just need the cheapest possible replacement and don't care about any of that, a factory string will get you by. We'd rather you buy the right thing than oversell you.</p></details>
+
+      <h3 style="font-family:'Oswald';text-transform:uppercase;letter-spacing:.06em;color:var(--green);font-size:1rem;margin:26px 0 14px">Materials &amp; Quality</h3>
+      <details><summary>What material are your strings made from?</summary><p><span class="ph-note">Confirm exact fibers</span> We build with premium bowstring fibers (such as BCY 452X, X99, and Mercury) chosen for low creep and stability. The right material depends on your setup and how you shoot — tell us your bow and we'll recommend the best fit.</p></details>
+      <details><summary>What does "pre-stretched" mean and why does it matter?</summary><p>After a string is built, it's put under heavy tension to remove the initial stretch before it ever goes on your bow. A properly pre-stretched string settles in within a handful of shots and then holds its length — that's what keeps your peep, draw length, and tune from drifting after a week of shooting.</p></details>
+      <details><summary>What is peep rotation / peep twist, and how do you prevent it?</summary><p>It's when your peep sight doesn't return to face you at full draw because the string is still settling and twisting. We prevent it by building with quality material and pre-stretching properly so the string is stable before it ships. Once it's broken in (a few shots), your peep should line up the same every time.</p></details>
+
+      <h3 style="font-family:'Oswald';text-transform:uppercase;letter-spacing:.06em;color:var(--green);font-size:1rem;margin:26px 0 14px">Ordering &amp; Specs</h3>
+      <details><summary>How do I order custom strings?</summary><p>Send your bow make, model, and year plus any color preferences through the contact form (or the builder above). We'll confirm the exact specs with you, then build your set to match.</p></details>
+      <details><summary>What if I don't know my exact string specs?</summary><p>No problem at all — most people don't. Just tell us your bow brand, model, and year. We can look up the correct lengths, or we'll walk you through measuring your current string and cables. Direct communication is part of the service.</p></details>
+      <details><summary>What if my bow is old or discontinued?</summary><p>Still doable. Older bows just need a little more info — usually a measurement of your existing string and cables. Send us what you've got and we'll figure it out together.</p></details>
+      <details><summary>Do you build for single-cam and dual-cam bows?</summary><p>Yes. We build complete sets, single strings, and single cables for single-cam, hybrid-cam, and dual-cam compound bows. Just tell us your setup.</p></details>
+      <details><summary>Can I order just one string or one cable?</summary><p>Yes — single strings and single cables are available individually if you only need to replace one piece.</p></details>
+      <details><summary>What's your turnaround time?</summary><p><span class="ph-note">Confirm real timing</span> We reply within 24 hours, and each set is built by hand. Typical build-and-ship time will be posted here. Need it fast for a hunt or shoot? Ask about a rush build.</p></details>
+
+      <h3 style="font-family:'Oswald';text-transform:uppercase;letter-spacing:.06em;color:var(--green);font-size:1rem;margin:26px 0 14px">Colors &amp; Customization</h3>
+      <details><summary>How many colors can I choose?</summary><p>You can run a single solid color, a two-color twist, or add a contrasting serving color — plus options like camo. Pick what matches your bow or go bold; it's your build.</p></details>
+      <details><summary>Can you match a specific color or my bow's camo?</summary><p>We'll get as close as the available fiber colors allow. Tell us what you're trying to match and we'll recommend the best combination. <span class="ph-note">Confirm available color list</span></p></details>
+      <details><summary>Will the colors fade?</summary><p>Quality fibers hold their color well with normal use. Like anything, heavy sun and weather over years will dull any string — regular waxing helps protect both color and performance.</p></details>
+
+      <h3 style="font-family:'Oswald';text-transform:uppercase;letter-spacing:.06em;color:var(--green);font-size:1rem;margin:26px 0 14px">Install, Care &amp; Longevity</h3>
+      <details><summary>Can I install the strings myself?</summary><p>If you have a bow press and know your way around it, yes. If not, most local pro shops will press your bow and install strings for a small fee. We're happy to talk you through the process either way.</p></details>
+      <details><summary>How often should I replace my bowstrings?</summary><p>It depends on how much you shoot and how you store your bow, but a common guideline is roughly once a year for active shooters, or sooner if you see fraying, fuzzing, or serving separation. We can set up a reminder so you're not guessing.</p></details>
+      <details><summary>How do I take care of my strings?</summary><p>Wax them regularly (not the served sections), keep your bow out of extreme heat like a hot car, and inspect for fraying. A little maintenance dramatically extends string life.</p></details>
+      <details><summary>How long do they take to break in?</summary><p>Because they're pre-stretched, our strings settle in within a handful of shots. We still recommend shooting a few dozen arrows and re-checking your peep and tune before a hunt or competition.</p></details>
+
+      <h3 style="font-family:'Oswald';text-transform:uppercase;letter-spacing:.06em;color:var(--green);font-size:1rem;margin:26px 0 14px">Shipping, Warranty &amp; More</h3>
+      <details><summary>What's your warranty?</summary><p><span class="ph-note">Confirm final warranty</span> We stand behind our build against peep rotation, serving separation, and creep. If something isn't right, we make it right. Normal wear from shooting and weather isn't a defect, but we'll always take care of our customers.</p></details>
+      <details><summary>Do you ship outside the US?</summary><p>International shipping is on the roadmap, especially for crossbow strings. Some countries restrict archery equipment, so reach out and we'll let you know what's possible to your location.</p></details>
+      <details><summary>Do you do crossbow strings?</summary><p>Crossbow strings and cables are coming. If you need a crossbow set, contact us — we'll let you know our current availability.</p></details>
+      <details><summary>Do you offer dealer or wholesale pricing for pro shops?</summary><p>Yes, that's a direction we're building toward. If you run a shop and want quality custom strings to stock or offer your customers, get in touch.</p></details>
+
     </div>
   </div>
 </section>
